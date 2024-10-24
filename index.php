@@ -19,8 +19,9 @@
     }
     ?>
 
-    <form>
-
+    <form method="POST" action="index.php">
+        Wpisz nazwisko: <input type="text" name="nazwisko">
+        <input type="submit" value="Filtruj">
     </form>
 
     <?php
