@@ -23,15 +23,13 @@
             die("Błąd połączenia: " . mysqli_connect_error());
         }
 
-        if(isset($_POST["nazwisko"])&&$_POST["nazwisko"]!="") {
+        if(isset($_POST["nazwisko"])&&$_POST["nazwisko"]!="") 
+        {
             $nazwisko = $_POST["nazwisko"];
 
             $nazwisko = mysqli_real_escape_string($conn, $nazwisko);
 
             $sql = "SELECT * FROM uczniowie WHERE Nazwisko='$nazwisko'";
-        } else {
-            $sql = "SELECT * FROM uczniowie";
-        }
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -43,7 +41,11 @@
             } else {
                 echo "Brak wyników";
             }
-            
+        } 
+            else {
+                echo "Brak nazwiska";
+            }
+
         mysqli_close($conn);
     ?>
 </body>
